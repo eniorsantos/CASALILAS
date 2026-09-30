@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens do painel admin (lib/admin/tokens.ts). Claro por padrão; `.dark` opt-in. */
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --surface-muted: #f2f1ef;
+  --border: #e5e3e0;
+  --text-primary: #18181b;
+  --text-secondary: #6b6862;
+  --accent: #6d4fc7;
+  --accent-muted: #ede9fb;
+  --success: #1a9c6e;
+  --warning: #b7791f;
+  --danger: #c0362c;
+}
+
+.dark {
+  --bg: #17161c;
+  --surface: #201f27;
+  --surface-muted: #2a2933;
+  --border: #35333f;
+  --text-primary: #f5f4f7;
+  --text-secondary: #a9a6b3;
+  --accent: #6d4fc7;
+  --accent-muted: #2a2540;
+  --success: #1a9c6e;
+  --warning: #b7791f;
+  --danger: #c0362c;
+}

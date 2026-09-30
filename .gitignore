@@ -1,0 +1,11 @@
+node_modules/
+.next/
+dist/
+.env
+.env.local
+.env.production
+*.log
+logs/
+backup-pre-deploy.sql
+coverage/
+.expo/

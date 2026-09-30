@@ -1,0 +1,17 @@
+{
+  "build": {
+    "development": { "developmentClient": true, "distribution": "internal" },
+    "staging": {
+      "distribution": "internal",
+      "env": { "EXPO_PUBLIC_API_URL": "https://staging.seusite.com" }
+    },
+    "production": {
+      "env": { "EXPO_PUBLIC_API_URL": "https://seusite.com" }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": { "buildType": "apk" },
+      "env": { "EXPO_PUBLIC_API_URL": "https://staging.seusite.com" }
+    }
+  }
+}

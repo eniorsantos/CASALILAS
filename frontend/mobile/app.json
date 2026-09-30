@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Plataforma de Cursos",
+    "slug": "plataforma-cursos",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "plataforma-cursos",
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "ios": {
+      "bundleIdentifier": "com.seusite.cursos"
+    },
+    "android": {
+      "package": "com.seusite.cursos"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "87fc5778-1512-449d-a7fc-95d6fda10f31"
+      }
+    },
+    "owner": "eniosantos"
+  }
+}
