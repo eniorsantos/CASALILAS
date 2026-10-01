@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 const links = [
@@ -11,19 +11,30 @@ const links = [
 export function Layout() {
   const { user, logout } = useAuth();
   return (
-    <div className="flex min-h-screen">
-      <aside className="w-56 border-r bg-white p-4">
-        <h2 className="font-bold mb-4">Painel</h2>
-        <nav className="space-y-2">
+    <div className="flex min-h-screen bg-st-bg text-st-text">
+      <aside className="flex w-56 shrink-0 flex-col border-r border-st-border bg-st-surface">
+        <h2 className="p-4 font-display text-2xl tracking-wide">PAINEL</h2>
+        <nav className="flex-1 space-y-1 px-2">
           {links.map((l) => (
-            <Link key={l.to} to={l.to} className="block hover:underline">
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.to === "/"}
+              className={({ isActive }) =>
+                `block rounded-md px-3 py-2 text-sm ${
+                  isActive
+                    ? "bg-st-accent/20 font-medium text-st-accent-warm"
+                    : "text-st-dim hover:bg-st-surface-2"
+                }`
+              }
+            >
               {l.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
-        <div className="mt-8 text-sm text-gray-500">
+        <div className="p-4 text-sm text-st-dim">
           <p>{user?.name ?? user?.email}</p>
-          <button onClick={logout} className="underline">
+          <button onClick={logout} className="underline hover:text-st-text">
             Sair
           </button>
         </div>

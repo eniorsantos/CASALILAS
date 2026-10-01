@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base do tema (mockup) — espelha frontend/shared/src/theme.ts */
+:root {
+  --st-bg: #1e1830;
+  --st-surface: #2a2340;
+  --st-surface-2: #352c4d;
+  --st-surface-3: #453a5c;
+  --st-accent: #9b5de5;
+  --st-accent-warm: #d9b8ff;
+  --st-text: #f5f3f8;
+  --st-dim: #b3a9c2;
+  --st-border: #453a5c;
+  --st-success: #46d369;
+}
+
+body {
+  background-color: var(--st-bg);
+  color: var(--st-text);
+  font-family: Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

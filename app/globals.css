@@ -2,8 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Tokens do painel admin (lib/admin/tokens.ts). Claro por padrão; `.dark` opt-in. */
+/* Tokens do painel admin (lib/admin/tokens.ts). Escuro streaming por padrão;
+   `.light` opt-in para o tema claro. */
 :root {
+  --bg: #1e1830;
+  --surface: #2a2340;
+  --surface-muted: #352c4d;
+  --border: #453a5c;
+  --text-primary: #f5f3f8;
+  --text-secondary: #b3a9c2;
+  --accent: #9b5de5;
+  --accent-muted: #3a2e5c;
+  --success: #46d369;
+  --warning: #b7791f;
+  --danger: #e5484d;
+}
+
+.light {
   --bg: #fafaf9;
   --surface: #ffffff;
   --surface-muted: #f2f1ef;
@@ -17,16 +32,25 @@
   --danger: #c0362c;
 }
 
-.dark {
-  --bg: #17161c;
-  --surface: #201f27;
-  --surface-muted: #2a2933;
-  --border: #35333f;
-  --text-primary: #f5f4f7;
-  --text-secondary: #a9a6b3;
-  --accent: #6d4fc7;
-  --accent-muted: #2a2540;
-  --success: #1a9c6e;
-  --warning: #b7791f;
-  --danger: #c0362c;
+/* Tema streaming (vitrine do aluno) — tokens do mockup-telas-app.html.
+   Escopo próprio para não conflitar com o tema claro do painel admin. */
+.theme-streaming {
+  --st-bg: #1e1830;
+  --st-surface: #2a2340;
+  --st-surface-2: #352c4d;
+  --st-surface-3: #453a5c;
+  --st-accent: #9b5de5;
+  --st-accent-warm: #d9b8ff;
+  --st-text: #f5f3f8;
+  --st-dim: #b3a9c2;
+  --st-border: #453a5c;
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -5,7 +5,7 @@ export function GoogleLoginButton() {
   return (
     <button
       onClick={() => signIn("google", { callbackUrl: "/meus-cursos" })}
-      className="w-full border rounded-md py-2 flex items-center justify-center gap-2"
+      className="flex w-full items-center justify-center gap-2 rounded-md border border-st-border bg-st-surface py-2 text-sm text-st-text"
     >
       Entrar com Google
     </button>

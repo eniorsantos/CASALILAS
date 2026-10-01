@@ -1,27 +1,29 @@
 /**
  * Tokens de design do painel admin (seção 1 da especificação).
+ * Tema escuro streaming por padrão (mesma identidade do mockup);
+ * `.light` no <html> restaura o tema claro.
  * CSS variables correspondentes em app/globals.css; tokens Tailwind
  * (bg-surface, text-textPrimary…) mapeados em tailwind.config.ts.
  */
 export const adminColors = {
-  bg: "#FAFAF9",
-  surface: "#FFFFFF",
-  surfaceMuted: "#F2F1EF",
-  border: "#E5E3E0",
-  textPrimary: "#18181B",
-  textSecondary: "#6B6862",
-  accent: "#6D4FC7",
-  accentMuted: "#EDE9FB",
-  success: "#1A9C6E",
+  bg: "#1E1830",
+  surface: "#2A2340",
+  surfaceMuted: "#352C4D",
+  border: "#453A5C",
+  textPrimary: "#F5F3F8",
+  textSecondary: "#B3A9C2",
+  accent: "#9B5DE5",
+  accentMuted: "#3A2E5C",
+  success: "#46D369",
   warning: "#B7791F",
-  danger: "#C0362C",
-  dark: {
-    bg: "#17161C",
-    surface: "#201F27",
-    surfaceMuted: "#2A2933",
-    border: "#35333F",
-    textPrimary: "#F5F4F7",
-    textSecondary: "#A9A6B3",
+  danger: "#E5484D",
+  light: {
+    bg: "#FAFAF9",
+    surface: "#FFFFFF",
+    surfaceMuted: "#F2F1EF",
+    border: "#E5E3E0",
+    textPrimary: "#18181B",
+    textSecondary: "#6B6862",
   },
 } as const;
 

@@ -7,12 +7,12 @@ import { AdminSidebar } from "@/components/AdminSidebar";
 
 export function AdminTopbar({ user }: { user: { name?: string | null; role: string } }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+  const [light, setLight] = useState(false);
 
-  function toggleDark() {
-    const next = !dark;
-    setDark(next);
-    document.documentElement.classList.toggle("dark", next);
+  function toggleTheme() {
+    const next = !light;
+    setLight(next);
+    document.documentElement.classList.toggle("light", next);
   }
 
   return (
@@ -36,10 +36,10 @@ export function AdminTopbar({ user }: { user: { name?: string | null; role: stri
       </button>
       <button
         className="text-textSecondary hover:text-textPrimary"
-        onClick={toggleDark}
-        aria-label="Alternar modo escuro"
+        onClick={toggleTheme}
+        aria-label="Alternar tema claro"
       >
-        {dark ? <Sun size={18} /> : <Moon size={18} />}
+        {light ? <Moon size={18} /> : <Sun size={18} />}
       </button>
       <Link href="/meus-cursos" className="flex items-center gap-2 text-sm text-textPrimary">
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accentMuted font-semibold text-accent">

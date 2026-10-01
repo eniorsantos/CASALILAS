@@ -17,11 +17,19 @@ export function CheckoutButton({ courseId }: { courseId: string }) {
   }
 
   return (
-    <div className="flex gap-2">
-      <button disabled={loading} onClick={() => checkout("stripe")} className="bg-black text-white px-4 py-2 rounded">
+    <div className="flex flex-col gap-2">
+      <button
+        disabled={loading}
+        onClick={() => checkout("stripe")}
+        className="rounded bg-st-accent px-4 py-3 text-sm font-bold text-white disabled:opacity-50"
+      >
         Pagar com cartão (Stripe)
       </button>
-      <button disabled={loading} onClick={() => checkout("mercadopago")} className="border px-4 py-2 rounded">
+      <button
+        disabled={loading}
+        onClick={() => checkout("mercadopago")}
+        className="rounded border border-st-border bg-st-surface-2 px-4 py-3 text-sm font-bold text-st-text disabled:opacity-50"
+      >
         Pagar com Pix (MP)
       </button>
     </div>

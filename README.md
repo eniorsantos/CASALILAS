@@ -32,6 +32,20 @@ npm run dev:workers                                # workers BullMQ
 
 O `.env` já vem com placeholders dummy válidos para desenvolvimento (ver `docs/DESENVOLVIMENTO.md`). Chaves reais de produção vivem em GitHub Secrets / Vercel / Railway — nunca no repositório.
 
+## Criar o administrador
+
+O `scripts/seed-admin.ts` cria (ou promove) um `ADMIN` lendo tudo de variáveis de ambiente — nenhum segredo fica no código:
+
+```powershell
+$env:ADMIN_NAME = "Seu Nome"
+$env:ADMIN_EMAIL = "voce@seusite.com"
+$env:ADMIN_PASSWORD = "uma-senha-forte-aqui"   # mín. 8 caracteres
+npx tsx scripts/seed-admin.ts
+# saída esperada: ADMIN OK: <email> (ADMIN)
+```
+
+Se o email já existir, ele atualiza nome/senha e promove a `ADMIN` (upsert — seguro rodar de novo). Entre em `/login` com esse email/senha para acessar `/admin`. No deploy local em produção, o `scripts/prod-up.ps1` já executa o seed sozinho com o `ADMIN_*` do `.env.production` (ver `docs/DEPLOY-LOCAL-PROD.md`).
+
 ## Scripts
 
 | Script | O quê |
@@ -89,6 +103,7 @@ frontend/     # clientes desacoplados: shared/ (tipos+API), web/ (painel Vite),
 | [docs/DEPLOY-LOCAL-PROD.md](docs/DEPLOY-LOCAL-PROD.md) | Instalação local em modo produção: scripts, compose prod, seed, operação |
 | [docs/FRONTEND.md](docs/FRONTEND.md) | Todas as alterações de frontend: pasta `frontend/`, painel admin reescrito, testes |
 | [docs/MOBILE.md](docs/MOBILE.md) | App mobile completo: telas, design system, endpoints, player, downloads, checkout, EAS |
+| [docs/THEME.md](docs/THEME.md) | Base do tema em todo o frontend: tokens, fontes, utilitários e sincronia |
 | [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Erros comuns (P1012, build, lint, Docker…) |
 
 ## Fluxos principais (resumo)
